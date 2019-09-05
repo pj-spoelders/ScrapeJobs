@@ -23,9 +23,15 @@ driver.execute_script("window.scrollTo(0, document.body.scrollHeight);var lenOfP
 time.sleep(1)
 print("I slept")
 html = driver.page_source
-print(html)
+# print(html)
 
-# response = requests.get(url)
+time.sleep(1)
+
+detailUrl = 'https://www.vdab.be/vindeenjob/vacatures/59880135/applicatiebeheerder-met-feeling-voor-testing-en-ervaring-in-een-labo-omgeving'
+response = requests.get(detailUrl)
+
+print(response.text)
+
 # print(response)
 #
 # soup = BeautifulSoup(response.text, 'html5lib')
