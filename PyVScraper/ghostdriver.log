@@ -1,64 +1,20 @@
-[INFO  - 2019-09-04T13:06:43.447Z] GhostDriver - Main - running on port 58642
-[INFO  - 2019-09-04T13:06:45.560Z] Session [d8d3b740-cf14-11e9-83f6-639f14220f21] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2019-09-04T13:06:45.560Z] Session [d8d3b740-cf14-11e9-83f6-639f14220f21] - page.customHeaders:  - {}
-[INFO  - 2019-09-04T13:06:45.560Z] Session [d8d3b740-cf14-11e9-83f6-639f14220f21] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2019-09-04T13:06:45.560Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: d8d3b740-cf14-11e9-83f6-639f14220f21
-[ERROR - 2019-09-04T13:06:47.756Z] Session [d8d3b740-cf14-11e9-83f6-639f14220f21] - page.onError - msg: ERROR TypeError: undefined is not a constructor (evaluating 'this.doc.head.append(t)')
+[INFO  - 2019-09-05T15:08:22.966Z] GhostDriver - Main - running on port 59292
+[INFO  - 2019-09-05T15:08:25.093Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2019-09-05T15:08:25.093Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - page.customHeaders:  - {}
+[INFO  - 2019-09-05T15:08:25.093Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2019-09-05T15:08:25.093Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 021959e0-cfef-11e9-8820-cdfd4a7da914
+[ERROR - 2019-09-05T15:08:26.912Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - page.onError - msg: ERROR TypeError: undefined is not a constructor (evaluating 'this.doc.head.append(t)')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2019-09-04T13:06:47.756Z] Session [d8d3b740-cf14-11e9-83f6-639f14220f21] - page.onError - stack:
+[ERROR - 2019-09-05T15:08:26.913Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - page.onError - stack:
   np (https://cdn.vdab.be/vindeenjob/main.js:1)
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2019-09-04T13:06:48.537Z] Session [d8d3b740-cf14-11e9-83f6-639f14220f21] - page.onError - msg: ERROR TypeError: undefined is not a constructor (evaluating 'this.doc.head.append(t)')
+[ERROR - 2019-09-05T15:08:27.512Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - page.onError - msg: ERROR TypeError: undefined is not a constructor (evaluating 'this.doc.head.append(t)')
 
   phantomjs://platform/console++.js:263 in error
-[ERROR - 2019-09-04T13:06:48.537Z] Session [d8d3b740-cf14-11e9-83f6-639f14220f21] - page.onError - stack:
+[ERROR - 2019-09-05T15:08:27.512Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - page.onError - stack:
   np (https://cdn.vdab.be/vindeenjob/main.js:1)
 
   phantomjs://platform/console++.js:263 in error
-[INFO  - 2019-09-04T13:11:43.446Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T13:16:43.446Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T13:21:43.446Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T13:26:43.447Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T13:31:43.447Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T13:36:43.447Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T13:41:43.447Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T13:46:43.447Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T13:51:43.447Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T13:56:43.447Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T14:01:43.463Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T14:06:43.464Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T14:11:43.464Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T14:16:43.479Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T14:21:43.482Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T14:26:43.493Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T14:31:43.493Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T14:36:43.495Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T16:23:00.126Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T16:28:00.024Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T16:33:00.027Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T16:38:00.042Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T16:43:00.042Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T16:48:00.043Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T16:53:00.056Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T16:58:00.059Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T17:03:00.072Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T17:08:00.076Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T17:13:00.077Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T17:18:00.087Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T17:23:00.090Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T17:28:00.090Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T17:33:00.090Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T17:38:00.104Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T17:43:00.106Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T17:48:00.107Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T17:53:00.119Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T17:58:00.119Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T18:03:00.119Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T18:08:00.120Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T18:13:00.133Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T18:18:00.137Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T18:23:00.149Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T18:28:00.153Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
-[INFO  - 2019-09-04T18:33:00.166Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2019-09-05T15:13:22.965Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
