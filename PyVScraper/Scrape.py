@@ -1,10 +1,10 @@
 import random
-from typing import Optional, Any
+from typing import Optional, Any, List
 
 import requests
 import urllib.request
 import time
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Tag, ResultSet
 import re
 import html5lib
 from selenium import webdriver
@@ -41,10 +41,27 @@ page1Soup = BeautifulSoup(page1Html)
 
 def GetNrOfResultsFromPage():
 
-    nrOfResultsElement = page1Soup.find("strong")  # {"id": "vej-totaal-jobs-gevonden"})
+    nrOfResultsElement = page1Soup.find("strong", {"id": "vej-totaal-jobs-gevonden"})  # {"id": "vej-totaal-jobs-gevonden"})
     nrOfResultsStr = nrOfResultsElement.text
     nrOfResults = int(nrOfResultsStr)
     return nrOfResults
+
+class JobInfo:
+    Title: str
+    Href: str
+    Company: str
+    Location: str
+
+def AddJobsFromInfoElements(infoElements : ResultSet):
+    jobsList: List[str] = []
+
+    info: Tag
+    for info in infoElements:
+        # Title = infoElements.contents
+        Href = info.attrs["href"]
+        # jobsList.append(JobInfo(infoElements.attrs))
+
+    return jobsList
 
 
 nrOfResults = GetNrOfResultsFromPage()
@@ -53,12 +70,13 @@ nrOfOtherPagesToScrape = nrOfResults / nrOfResultPerPage - 1
 
 page1InfoElements = GetInfoElementsFromPageSoup(page1Soup)
 
+jobsList: List[JobInfo] = []
 
+jobsList += AddJobsFromInfoElements(page1InfoElements)
 
-detailUrl = 'https://www.vdab.be/vindeenjob/vacatures/59880135/applicatiebeheerder-met-feeling-voor-testing-en-ervaring-in-een-labo-omgeving'
-response = requests.get(detailUrl)
-
-print(response.text)
+#detailUrl = 'https://www.vdab.be/vindeenjob/vacatures/59880135/applicatiebeheerder-met-feeling-voor-testing-en-ervaring-in-een-labo-omgeving'
+#response = requests.get(detailUrl)
+#print(response.text)
 
 # print(response)
 #
