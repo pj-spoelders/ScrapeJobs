@@ -1,20 +1,5 @@
-[INFO  - 2019-09-05T15:08:22.966Z] GhostDriver - Main - running on port 59292
-[INFO  - 2019-09-05T15:08:25.093Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
-[INFO  - 2019-09-05T15:08:25.093Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - page.customHeaders:  - {}
-[INFO  - 2019-09-05T15:08:25.093Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
-[INFO  - 2019-09-05T15:08:25.093Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 021959e0-cfef-11e9-8820-cdfd4a7da914
-[ERROR - 2019-09-05T15:08:26.912Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - page.onError - msg: ERROR TypeError: undefined is not a constructor (evaluating 'this.doc.head.append(t)')
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2019-09-05T15:08:26.913Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - page.onError - stack:
-  np (https://cdn.vdab.be/vindeenjob/main.js:1)
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2019-09-05T15:08:27.512Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - page.onError - msg: ERROR TypeError: undefined is not a constructor (evaluating 'this.doc.head.append(t)')
-
-  phantomjs://platform/console++.js:263 in error
-[ERROR - 2019-09-05T15:08:27.512Z] Session [021959e0-cfef-11e9-8820-cdfd4a7da914] - page.onError - stack:
-  np (https://cdn.vdab.be/vindeenjob/main.js:1)
-
-  phantomjs://platform/console++.js:263 in error
-[INFO  - 2019-09-05T15:13:22.965Z] SessionManagerReqHand - _cleanupWindowlessSessions - Asynchronous Sessions clean-up phase starting NOW
+[INFO  - 2019-10-01T13:24:55.880Z] GhostDriver - Main - running on port 55572
+[INFO  - 2019-10-01T13:24:57.973Z] Session [dd1c1d20-e44e-11e9-9012-2fbcd93e5e3e] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2019-10-01T13:24:57.973Z] Session [dd1c1d20-e44e-11e9-9012-2fbcd93e5e3e] - page.customHeaders:  - {}
+[INFO  - 2019-10-01T13:24:57.973Z] Session [dd1c1d20-e44e-11e9-9012-2fbcd93e5e3e] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"windows-10-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2019-10-01T13:24:57.973Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: dd1c1d20-e44e-11e9-9012-2fbcd93e5e3e

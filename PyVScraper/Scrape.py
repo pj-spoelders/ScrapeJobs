@@ -17,14 +17,15 @@ def GetPageHtmlViaSelenium(driver, url):
     driver.execute_script(
         "window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
     # sleep
-    time.sleep(1)  # wait for content to load
+    time.sleep(2)  # wait for content to load
     print("I slept")
     html = driver.page_source
     return html
 
 def GetInfoElementsFromPageSoup(soup):
-    infoElements = soup.find_all("div", {"class": "-info"})
+    infoElements = soup.find_all("a", {"class": "slat-link"})
     print("searched soup")
+    return infoElements
 
 print("Start scraping")
 # https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460
@@ -37,14 +38,20 @@ driver = webdriver.PhantomJS()
 page1Html = GetPageHtmlViaSelenium(driver, url)
 page1Soup = BeautifulSoup(page1Html)
 
-nrOfResultsElement = page1Soup.find("strong")  #  {"id": "vej-totaal-jobs-gevonden"})
-nrOfResultsStr = nrOfResultsElement.text
-nrOfResults = int( nrOfResultsStr)
-nrOfResultPerPage = 15
-nrOfOtherPagesToCheck = nrOfResults / nrOfResultPerPage - 1
-time.sleep(1)
 
-GetInfoElementsFromPageSoup(page1Soup)
+def GetNrOfResultsFromPage():
+
+    nrOfResultsElement = page1Soup.find("strong")  # {"id": "vej-totaal-jobs-gevonden"})
+    nrOfResultsStr = nrOfResultsElement.text
+    nrOfResults = int(nrOfResultsStr)
+    return nrOfResults
+
+
+nrOfResults = GetNrOfResultsFromPage()
+nrOfResultPerPage = 15
+nrOfOtherPagesToScrape = nrOfResults / nrOfResultPerPage - 1
+
+page1InfoElements = GetInfoElementsFromPageSoup(page1Soup)
 
 
 
