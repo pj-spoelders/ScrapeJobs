@@ -1,5 +1,6 @@
 import datetime
 import json
+import locale
 import random
 from typing import Optional, Any, List
 
@@ -10,7 +11,7 @@ from bs4 import BeautifulSoup, Tag, ResultSet
 import re
 import html5lib
 from selenium import webdriver
-
+import dateparser
 
 def GetPageHtmlViaSelenium(driver, url):
     # get web page
@@ -27,7 +28,8 @@ def GetPageHtmlViaSelenium(driver, url):
 
 def GetInfoElementsFromPageSoup(soup, expectedResultsPerPage):
     infoElements = soup.find_all("a", {"class": "slat-link"})
-    assert len(infoElements) > 0 and len(infoElements) <= expectedResultsPerPage, "Something's wrong with the soup, expected more than 0 and no more than 15 elements"
+    assert len(infoElements) > 0 and len(
+        infoElements) <= expectedResultsPerPage, "Something's wrong with the soup, expected more than 0 and no more than 15 elements"
     print("searched soup")
     return infoElements
 
@@ -54,11 +56,12 @@ def GetNrOfResultsFromPage():
 
 
 class JobInfo:
-    def __init__(self, title, href, company, location, createdon, updatedon):
+    def __init__(self, title, href, company, location, jobtype,createdon, updatedon):
         self.Href = href
         self.Title = title
         self.Company = company
         self.Location = location
+        self.JobType = jobtype
         self.CreatedOn = createdon
         self.UpdatedOn = updatedon
 
@@ -70,32 +73,54 @@ class JobInfo:
     CreatedOn: datetime.date
     UpdatedOn: datetime.date
 
+# https://realpython.com/python-json/#python-supports-json-natively
+class CustomJobInfoEncoder(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, JobInfo):
+            updatedOnStr :str
+            if o.UpdatedOn is None:
+                updatedOnStr = ""
+            else:
+                updatedOnStr = o.UpdatedOn.strftime("%d/%m/%Y")
+            return (o.Href,o.Title,o.Company,o.Location,o.JobType,o.CreatedOn.strftime("%d/%m/%Y"),updatedOnStr)
+        return super().default(o)
 
 def AddJobsFromInfoElements(infoElements: ResultSet):
     jobsList: List[JobInfo] = []
 
     info: Tag
     for info in infoElements:
-        infoTag : Tag = info.contents[1]
-        Title = infoTag.find("div", {"class": "slat-title"}).text
-
-        locationTag : Tag = infoTag.find(class_="location")
-        locationTagStrongTags = locationTag.find_all("strong")
-        Company = locationTagStrongTags[0].text
-        Location =  locationTagStrongTags[1].text
-
-        jobTypeTag: Tag = infoTag.find(class_="job-type")
-        jobTypeSpanTags : ResultSet = jobTypeTag.find_all("span")
-        JobType = jobTypeSpanTags[0].text
-        CreatedOn = jobTypeSpanTags[1].text
-        if len(jobTypeSpanTags) == 3:
-            ChangedOn = jobTypeSpanTags[2].text
-        Href = info.attrs["href"]
-
-
-        jobsList.append(JobInfo(infoElements.attrs))
+        jobsList.append(ParseInfo(info))
 
     return jobsList
+
+# expects '9 juli 2018' or similar
+def DutchDateStrToDate(dds: str):
+    # just use smth like babel instead of messing about with locale
+    # see this: https://stackoverflow.com/questions/52373931/options-for-converting-between-localized-strings-and-datetime-objects
+    # we're going to use dateparser https://github.com/scrapinghub/dateparser
+    dt = dateparser.parse(dds, languages=['nl'])
+    return dt
+
+def ParseInfo(info):
+    infoTag: Tag = info.contents[1]
+    Title = infoTag.find("div", {"class": "slat-title"}).text
+    locationTag: Tag = infoTag.find(class_="location")
+    locationTagStrongTags = locationTag.find_all("strong")
+    Company = locationTagStrongTags[0].text
+    Location = locationTagStrongTags[1].text
+    jobTypeTag: Tag = infoTag.find(class_="job-type")
+    jobTypeSpanTags: ResultSet = jobTypeTag.find_all("span")
+    JobType = jobTypeSpanTags[0].text
+    CreatedOn = DutchDateStrToDate(jobTypeSpanTags[1].text[16:])  # slicing
+    if len(jobTypeSpanTags) == 3:
+        UpdatedOn = DutchDateStrToDate(jobTypeSpanTags[2].text[19:])
+    else:
+        UpdatedOn = None
+    Href = info.attrs["href"]
+
+    return JobInfo(Title, Href, Company, Location,JobType, CreatedOn, UpdatedOn)
+
 
 
 nrOfResults = GetNrOfResultsFromPage()
@@ -108,7 +133,10 @@ jobsList: List[JobInfo] = []
 
 jobsList += AddJobsFromInfoElements(page1InfoElements)
 
-jsonStr = json.dumps(jobsList)
+with open("data_file.json", "w") as write_file:
+    json.dump(jobsList,fp=write_file,cls=CustomJobInfoEncoder)
+    #jsonStr = json.dumps(jobsList, cls=CustomJobInfoEncoder)
+
 
 # detailUrl = 'https://www.vdab.be/vindeenjob/vacatures/59880135/applicatiebeheerder-met-feeling-voor-testing-en-ervaring-in-een-labo-omgeving'
 # response = requests.get(detailUrl)
