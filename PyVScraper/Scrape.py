@@ -104,8 +104,12 @@ def ParseInfo(info):
     Title = infoTag.find("div", {"class": "slat-title"}).text
     locationTag: Tag = infoTag.find(class_="location")
     locationTagStrongTags = locationTag.find_all("strong")
-    Company = locationTagStrongTags[0].text
-    Location = locationTagStrongTags[1].text
+    if len(locationTagStrongTags) == 2:
+        Company = locationTagStrongTags[0].text
+        Location = locationTagStrongTags[1].text
+    else:
+        Company = "/"
+        Location = locationTagStrongTags[0].text
     jobTypeTag: Tag = infoTag.find(class_="job-type")
     jobTypeSpanTags: ResultSet = jobTypeTag.find_all("span")
     JobType = jobTypeSpanTags[0].text
