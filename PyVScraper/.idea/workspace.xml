@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ca7a67c-b9ce-4bf8-b386-3b3a42c301f1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scrape.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/data_file.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ghostdriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/ghostdriver.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

@@ -76,7 +76,8 @@ class CustomJobInfoEncoder(json.JSONEncoder):
                 updatedOnStr = ""
             else:
                 updatedOnStr = o.UpdatedOn.strftime("%d/%m/%Y")
-            return (o.Href, o.Title, o.Company, o.Location, o.JobType, o.CreatedOn.strftime("%d/%m/%Y"), updatedOnStr)
+                #https://www.google.com/search?q=python+custom+jsonencoder+examples&oq=python+custom+jsonencoder+examples&aqs=chrome..69i57j0.9959j0j4&sourceid=chrome&ie=UTF-8
+            return {"Href" : o.Href, "Title" : o.Title,"Company": o.Company,"Location": o.Location,"JobType": o.JobType,"CreatedOn": o.CreatedOn.strftime("%d/%m/%Y"),"UpdatedOn": updatedOnStr}
         return super().default(o)
 
 
