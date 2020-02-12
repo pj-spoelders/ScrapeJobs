@@ -39,18 +39,6 @@ def GetPageSoupViaSelenium(driver, url):
     pageHtml = GetPageHtmlViaSelenium(driver, url)
     return BeautifulSoup(pageHtml)
 
-
-print("Start scraping")
-# https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460
-# https://towardsdatascience.com/data-science-skills-web-scraping-javascript-using-python-97a29738353f
-# https://pythonspot.com/selenium-phantomjs/
-
-url: str = 'https://www.vdab.be/vindeenjob/vacatures?locatie=8630%20veurne&afstand=10&sort=standaard&jobdomein=JOBCAT10'
-driver = webdriver.PhantomJS()
-
-page1Soup = GetPageSoupViaSelenium(driver, url)
-
-
 def GetNrOfResultsFromPage():
     nrOfResultsElement = page1Soup.find("strong",
                                         {"id": "vej-totaal-jobs-gevonden"})  # {"id": "vej-totaal-jobs-gevonden"})
@@ -130,32 +118,42 @@ def ParseInfo(info):
 
     return JobInfo(Title, Href, Company, Location, JobType, CreatedOn, UpdatedOn)
 
+def ScrapeAllJobInfo(url):
+    global page1Soup
+    driver = webdriver.PhantomJS()
+    page1Soup = GetPageSoupViaSelenium(driver, url)
+    nrOfResults = GetNrOfResultsFromPage()
+    nrOfResultPerPage = 15
+    nrOfOtherPagesToScrape = nrOfResults // nrOfResultPerPage
+    modulo = nrOfResults % nrOfResultPerPage
+    if modulo > 0:
+        nrOfOtherPagesToScrape += 1
+    nrOfOtherPagesToScrape -= 1
+    page1InfoElements = GetInfoElementsFromPageSoup(page1Soup, nrOfResultPerPage)
+    jobsList: List[JobInfo] = []
+    jobsList += AddJobsFromInfoElements(page1InfoElements)
+    # do the other pages as well
+    # todo: possibly add a random interval if they're guarding against scraping
+    i: int
+    for i in range(0, nrOfOtherPagesToScrape):
+        pageXUrl = url + "&p=" + str(i + 2)
+        pageXSoup = GetPageSoupViaSelenium(driver, pageXUrl)
+        pageXInfoElements = GetInfoElementsFromPageSoup(pageXSoup, nrOfResultPerPage)
+        jobsList += AddJobsFromInfoElements(pageXInfoElements)
+    with open("data_file.json", "w") as write_file:
+        json.dump(jobsList, fp=write_file, cls=CustomJobInfoEncoder)
+        # jsonStr = json.dumps(jobsList, cls=CustomJobInfoEncoder)
+    print("end of program")
 
-nrOfResults = GetNrOfResultsFromPage()
-nrOfResultPerPage = 15
-nrOfOtherPagesToScrape = nrOfResults // nrOfResultPerPage
-modulo = nrOfResults % nrOfResultPerPage
-if modulo > 0:
-    nrOfOtherPagesToScrape += 1
-nrOfOtherPagesToScrape -= 1
-page1InfoElements = GetInfoElementsFromPageSoup(page1Soup, nrOfResultPerPage)
 
-jobsList: List[JobInfo] = []
+print("Start scraping")
+# https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460
+# https://towardsdatascience.com/data-science-skills-web-scraping-javascript-using-python-97a29738353f
+# https://pythonspot.com/selenium-phantomjs/
 
-jobsList += AddJobsFromInfoElements(page1InfoElements)
+url: str = 'https://www.vdab.be/vindeenjob/vacatures?locatie=8630%20veurne&afstand=10&sort=standaard&jobdomein=JOBCAT10'
 
-# do the other pages as well
-# todo: possibly add a random interval if they're guarding against scraping
-i: int
-for i in range(0, nrOfOtherPagesToScrape):
-    pageXUrl = url + "&p=" + str(i + 2)
-    pageXSoup = GetPageSoupViaSelenium(driver, pageXUrl)
-    pageXInfoElements = GetInfoElementsFromPageSoup(pageXSoup, nrOfResultPerPage)
-    jobsList += AddJobsFromInfoElements(pageXInfoElements)
+ScrapeAllJobInfo(url)
 
-with open("data_file.json", "w") as write_file:
-    json.dump(jobsList, fp=write_file, cls=CustomJobInfoEncoder)
-    # jsonStr = json.dumps(jobsList, cls=CustomJobInfoEncoder)
 
-print("end of program")
 # print(soup.findAll('a'))
