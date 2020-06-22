@@ -150,15 +150,18 @@ def ScrapeAllJobInfo(url):
         # jsonStr = json.dumps(jobsList, cls=CustomJobInfoEncoder)
     print("end of program")
 
+def main():
+    print("Start scraping")
+    # https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460
+    # https://towardsdatascience.com/data-science-skills-web-scraping-javascript-using-python-97a29738353f
+    # https://pythonspot.com/selenium-phantomjs/
 
-print("Start scraping")
-# https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460
-# https://towardsdatascience.com/data-science-skills-web-scraping-javascript-using-python-97a29738353f
-# https://pythonspot.com/selenium-phantomjs/
+    url: str = 'https://www.vdab.be/vindeenjob/vacatures?locatie=8630%20veurne&afstand=10&sort=standaard&jobdomein=JOBCAT10'
 
-url: str = 'https://www.vdab.be/vindeenjob/vacatures?locatie=8630%20veurne&afstand=10&sort=standaard&jobdomein=JOBCAT10'
-
-ScrapeAllJobInfo(url)
+    ScrapeAllJobInfo(url)
 
 
-# print(soup.findAll('a'))
+if __name__ == "__main__":
+    main()
+
+
