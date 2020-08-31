@@ -125,6 +125,7 @@ def ParseInfo(info):
     return JobInfo(Title, Href, Company, Location, JobType, CreatedOn, UpdatedOn)
 
 def ScrapeAllJobInfo(url):
+    print("scraping everything from:" + url)
     global page1Soup
     driver = webdriver.PhantomJS()
     print("scraping first page")
@@ -153,17 +154,20 @@ def ScrapeAllJobInfo(url):
     with open("data_file"+ dtNow.strftime("%d-%m-%Y-%H-%M-%S") + ".json", "w") as write_file:
         json.dump(jobsList, fp=write_file, cls=CustomJobInfoEncoder)
         # jsonStr = json.dumps(jobsList, cls=CustomJobInfoEncoder)
-    print("scraping complete - json file - created - end of program")
+    print("scraping url complete")
 
-def main(startUrl: str):
+def main(startUrlList: list):
     print("Start scraping")
-    # https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460
-    # https://towardsdatascience.com/data-science-skills-web-scraping-javascript-using-python-97a29738353f
-    # https://pythonspot.com/selenium-phantomjs/
+    for i in startUrlList:
 
-    url: str = startUrl
+        # https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460
+        # https://towardsdatascience.com/data-science-skills-web-scraping-javascript-using-python-97a29738353f
+        # https://pythonspot.com/selenium-phantomjs/
 
-    ScrapeAllJobInfo(startUrl)
+        url: str = i
+
+        ScrapeAllJobInfo(url)
+    print("scraping complete - end of program")
 
 
 strDocOpt = """VDAB Job site parser.
@@ -183,6 +187,6 @@ from docopt import docopt
 
 if __name__ == "__main__":
     arguments = docopt(strDocOpt, version='ScrapeJobs 1.0')
-    main(arguments["<startUrl>"][0])
+    main(arguments["<startUrl>"])
 
 
