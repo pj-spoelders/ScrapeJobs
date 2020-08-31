@@ -2,20 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ca7a67c-b9ce-4bf8-b386-3b3a42c301f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data_file08-31-2020-10-49-31.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_file08-31-202010-44-16.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_file31-08-2020-11-54-33.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_file31-08-2020-12-47-39.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_file31-08-2020-13-31-46.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/docopt-0.6.2-py3.7.egg-info/PKG-INFO" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/docopt-0.6.2-py3.7.egg-info/SOURCES.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/docopt-0.6.2-py3.7.egg-info/dependency_links.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/docopt-0.6.2-py3.7.egg-info/installed-files.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/docopt-0.6.2-py3.7.egg-info/top_level.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/docopt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scrape.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_file.json" beforeDir="false" afterPath="$PROJECT_DIR$/data_file.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ghostdriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/ghostdriver.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="PyVScraper" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -53,7 +56,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scrape.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="&quot;https://www.vdab.be/vindeenjob/vacatures?locatie=8630%20veurne&amp;afstand=10&amp;sort=standaard&amp;jobdomein=JOBCAT10&quot;" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -82,6 +85,10 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.Scrape" />
+      <item itemvalue="Python.Test" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Scrape" />
@@ -118,32 +125,75 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1259" height="399" key="GridCell.Tab.0.bottom" timestamp="1598863743947">
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598867584699">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1259" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598863743947" />
-    <state width="1259" height="399" key="GridCell.Tab.0.center" timestamp="1598863743947">
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598867584699" />
+    <state width="1141" height="466" key="DebuggerActiveHint" timestamp="1598870771046">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1259" height="399" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598863743947" />
-    <state width="1259" height="399" key="GridCell.Tab.0.left" timestamp="1598863743947">
+    <state width="1141" height="466" key="DebuggerActiveHint/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598870771046" />
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1598867287839">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1259" height="399" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598863743947" />
-    <state width="1259" height="399" key="GridCell.Tab.0.right" timestamp="1598863743947">
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598867287839" />
+    <state width="1259" height="399" key="GridCell.Tab.0.bottom" timestamp="1598873489177">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1259" height="399" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598863743947" />
+    <state width="1259" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598873489177" />
+    <state width="1259" height="399" key="GridCell.Tab.0.center" timestamp="1598873489177">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="399" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598873489177" />
+    <state width="1259" height="399" key="GridCell.Tab.0.left" timestamp="1598873489177">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="399" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598873489177" />
+    <state width="1259" height="399" key="GridCell.Tab.0.right" timestamp="1598873489177">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1259" height="399" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598873489177" />
+    <state width="1262" height="491" key="GridCell.Tab.1.bottom" timestamp="1598872993682">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1262" height="491" key="GridCell.Tab.1.bottom/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598872993682" />
+    <state width="1262" height="491" key="GridCell.Tab.1.center" timestamp="1598872993682">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1262" height="491" key="GridCell.Tab.1.center/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598872993682" />
+    <state width="1262" height="491" key="GridCell.Tab.1.left" timestamp="1598872993682">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1262" height="491" key="GridCell.Tab.1.left/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598872993682" />
+    <state width="1262" height="491" key="GridCell.Tab.1.right" timestamp="1598872993682">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1262" height="491" key="GridCell.Tab.1.right/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598872993682" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Scrape.py</url>
-          <line>45</line>
-          <option name="timeStamp" value="21" />
+          <line>184</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Scrape.py</url>
+          <line>158</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Scrape.py</url>
+          <line>163</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="arguments[&quot;startUrl&quot;]" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

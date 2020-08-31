@@ -13,6 +13,7 @@ import html5lib
 from selenium import webdriver
 import dateparser
 
+sleepTimeInSecondsBeforeProcessing = 5
 
 def GetPageHtmlViaSelenium(driver, url):
     # get web page
@@ -21,7 +22,7 @@ def GetPageHtmlViaSelenium(driver, url):
     driver.execute_script(
         "window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;")
     # sleep
-    time.sleep(10)  # wait for content to load, since the VDAB site is slow as molasses, give it a ton of time ..
+    time.sleep(sleepTimeInSecondsBeforeProcessing)  # wait for content to load, since the VDAB site is slow as molasses, give it a ton of time ..
     print("I slept")
     html = driver.page_source
     return html
@@ -126,6 +127,7 @@ def ParseInfo(info):
 def ScrapeAllJobInfo(url):
     global page1Soup
     driver = webdriver.PhantomJS()
+    print("scraping first page")
     page1Soup = GetPageSoupViaSelenium(driver, url)
     nrOfResults = GetNrOfResultsFromPage()
     nrOfResultPerPage = 15
@@ -141,29 +143,46 @@ def ScrapeAllJobInfo(url):
     # todo: possibly add a random interval if they're guarding against scraping
     i: int
     for i in range(0, nrOfOtherPagesToScrape):
+        print("scraping next page (" + str(i + 1) + " of " + str(nrOfOtherPagesToScrape ) + ")")
         pageXUrl = url + "&p=" + str(i + 2)
         pageXSoup = GetPageSoupViaSelenium(driver, pageXUrl)
         pageXInfoElements = GetInfoElementsFromPageSoup(pageXSoup, nrOfResultPerPage)
         jobsList += AddJobsFromInfoElements(pageXInfoElements)
-
+    print("scraping complete ")
     dtNow = datetime.datetime.now()
     with open("data_file"+ dtNow.strftime("%d-%m-%Y-%H-%M-%S") + ".json", "w") as write_file:
         json.dump(jobsList, fp=write_file, cls=CustomJobInfoEncoder)
         # jsonStr = json.dumps(jobsList, cls=CustomJobInfoEncoder)
-    print("end of program")
+    print("scraping complete - json file - created - end of program")
 
-def main():
+def main(startUrl: str):
     print("Start scraping")
     # https://towardsdatascience.com/how-to-web-scrape-with-python-in-4-minutes-bc49186a8460
     # https://towardsdatascience.com/data-science-skills-web-scraping-javascript-using-python-97a29738353f
     # https://pythonspot.com/selenium-phantomjs/
 
-    url: str = 'https://www.vdab.be/vindeenjob/vacatures?locatie=8630%20veurne&afstand=10&sort=standaard&jobdomein=JOBCAT10'
+    url: str = startUrl
 
-    ScrapeAllJobInfo(url)
+    ScrapeAllJobInfo(startUrl)
 
+
+strDocOpt = """VDAB Job site parser.
+
+Usage:
+  Scrape.py <startUrl>...
+
+
+Options:
+  -h --help     Show this screen.
+  --version     Show version.
+
+"""
+
+
+from docopt import docopt
 
 if __name__ == "__main__":
-    main()
+    arguments = docopt(strDocOpt, version='ScrapeJobs 1.0')
+    main(arguments["<startUrl>"][0])
 
 
