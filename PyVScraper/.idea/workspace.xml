@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ca7a67c-b9ce-4bf8-b386-3b3a42c301f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data_file31-08-2020-11-54-33.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_file31-08-2020-12-47-39.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_file31-08-2020-13-31-46.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/docopt-0.6.2-py3.7.egg-info/PKG-INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/docopt-0.6.2-py3.7.egg-info/SOURCES.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/docopt-0.6.2-py3.7.egg-info/dependency_links.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/docopt-0.6.2-py3.7.egg-info/installed-files.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/docopt-0.6.2-py3.7.egg-info/top_level.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/Lib/site-packages/docopt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scrape.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ghostdriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/ghostdriver.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +46,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scrape.py" />
-      <option name="PARAMETERS" value="&quot;https://www.vdab.be/vindeenjob/vacatures?locatie=8630%20veurne&amp;afstand=10&amp;sort=standaard&amp;jobdomein=JOBCAT10&quot;" />
+      <option name="PARAMETERS" value="&quot;https://www.vdab.be/vindeenjob/vacatures?sort=datum&amp;jobdomein=JOBCAT10&quot;" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -125,10 +115,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598867584699">
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598873910197">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598867584699" />
+    <state x="734" y="355" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598873910197" />
     <state width="1141" height="466" key="DebuggerActiveHint" timestamp="1598870771046">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -137,22 +127,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598867287839" />
-    <state width="1259" height="399" key="GridCell.Tab.0.bottom" timestamp="1598873489177">
+    <state width="1259" height="399" key="GridCell.Tab.0.bottom" timestamp="1598873914388">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1259" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598873489177" />
-    <state width="1259" height="399" key="GridCell.Tab.0.center" timestamp="1598873489177">
+    <state width="1259" height="399" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598873914388" />
+    <state width="1259" height="399" key="GridCell.Tab.0.center" timestamp="1598873914388">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1259" height="399" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598873489177" />
-    <state width="1259" height="399" key="GridCell.Tab.0.left" timestamp="1598873489177">
+    <state width="1259" height="399" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598873914388" />
+    <state width="1259" height="399" key="GridCell.Tab.0.left" timestamp="1598873914388">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1259" height="399" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598873489177" />
-    <state width="1259" height="399" key="GridCell.Tab.0.right" timestamp="1598873489177">
+    <state width="1259" height="399" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598873914388" />
+    <state width="1259" height="399" key="GridCell.Tab.0.right" timestamp="1598873914388">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1259" height="399" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598873489177" />
+    <state width="1259" height="399" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1598873914388" />
     <state width="1262" height="491" key="GridCell.Tab.1.bottom" timestamp="1598872993682">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
