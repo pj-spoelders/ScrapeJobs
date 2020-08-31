@@ -145,7 +145,9 @@ def ScrapeAllJobInfo(url):
         pageXSoup = GetPageSoupViaSelenium(driver, pageXUrl)
         pageXInfoElements = GetInfoElementsFromPageSoup(pageXSoup, nrOfResultPerPage)
         jobsList += AddJobsFromInfoElements(pageXInfoElements)
-    with open("data_file.json", "w") as write_file:
+
+    dtNow = datetime.datetime.now()
+    with open("data_file"+ dtNow.strftime("%d-%m-%Y-%H-%M-%S") + ".json", "w") as write_file:
         json.dump(jobsList, fp=write_file, cls=CustomJobInfoEncoder)
         # jsonStr = json.dumps(jobsList, cls=CustomJobInfoEncoder)
     print("end of program")
