@@ -13,7 +13,7 @@ import html5lib
 from selenium import webdriver
 import dateparser
 
-sleepTimeInSecondsBeforeProcessing = 5
+sleepTimeInSecondsBeforeProcessing = 10
 
 def GetPageHtmlViaSelenium(driver, url):
     # get web page
